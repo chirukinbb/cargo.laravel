@@ -10,22 +10,19 @@ class Point extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    public const UPDATED_AT = null;
+
+    public const CREATED_AT = 'date';
 
     protected $fillable = [
         'name',
-        'date_time',
+        'date',
         'load_id'
     ];
 
-    protected $attributes;
-
-    public function __construct(array $attributes = [])
-    {
-        $this->attributes['date_time'] = Carbon::now();
-
-        parent::__construct($attributes);
-    }
+    protected $casts = [
+        'date'=>'date:d.m.y'
+    ];
 
     public function cargo()
     {

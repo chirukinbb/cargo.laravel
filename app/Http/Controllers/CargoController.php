@@ -5,11 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CargoRequest;
 use App\Http\Resources\CargoResource;
 use App\Models\Load;
-use App\Models\Loads;
-use App\Models\Point;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 
 class CargoController extends Controller
 {
@@ -46,7 +42,7 @@ class CargoController extends Controller
      * @param  int  $id
      * @return CargoResource
      */
-    public function show($id)
+    public function show(int $id)
     {
         $cargo = Load::whereId($id)->with('point')
             ->first();

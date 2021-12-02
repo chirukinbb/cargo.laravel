@@ -2093,7 +2093,6 @@ var page = new Vue({
       to: '',
       name: '',
       weight: '',
-      _token: $('input[name=_token]').val(),
       isOpen: true
     },
     cargos: [],

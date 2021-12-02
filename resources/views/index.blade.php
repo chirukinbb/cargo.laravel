@@ -67,7 +67,7 @@
                         <div class="py-1 px-4">Вага</div>
                     </div>
                     <div class="divide-y flex flex-col" v-for="cargo in cargos" v-on:click="openMap(cargo.id)" :key="cargo.id" style="cursor: pointer">
-                        <div class="divide-y" v-bind:class="{ border:cargo.isOpen, 'border-blue-600':isOpen }">
+                        <div class="divide-y" v-bind:class="{ border:cargo.isOpen, 'border-blue-600':cargo.isOpen }">
                             <div class="w-full grid grid-cols-5">
                                 <div class="py-1 px-4" v-text="cargo.date"></div>
                                 <div class="py-1 px-4 col-span-2" v-text="cargo.route"></div>

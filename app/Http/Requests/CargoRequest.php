@@ -23,12 +23,4 @@ class CargoRequest extends FormRequest
             'weight'=>'numeric|required',
         ];
     }
-
-    public function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response()->json([
-            'errors' => $validator->errors(),
-            'status' => true
-        ], 422));
-    }
 }

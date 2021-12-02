@@ -19,7 +19,7 @@ class CargoResource extends JsonResource
         return [
             'id'=>$this->id,
             'name'=>$this->name,
-            'date'=>Carbon::parse($this->point['date_time'])->format('d.m.y'),
+            'date'=>$this->point['date'],
             'route'=>$this->point['name'],
             'weight'=>$this->weight
         ];
